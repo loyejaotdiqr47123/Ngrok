@@ -91,7 +91,7 @@ getNgrokAddress(){
 
 download_ngrok(){
 	[ $ngrokStatus == "已安装" ] && red "检测到已安装Ngrok程序包，无需重复安装！！" && exit 1
-	wget -N https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-$cpuArch.tgz
+	wget -N --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-$cpuArch.tgz
 	tar -xzvf ngrok-stable-linux-$cpuArch.tgz -C /usr/local/bin
 	green "Ngrok 程序包已安装成功"
 	back2menu
